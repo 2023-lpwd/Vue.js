@@ -6,7 +6,6 @@ export default {
     };
   },
   props: {
-    label: String,
     href: String,
     type: String,
   },
@@ -17,10 +16,10 @@ export default {
 
 <template>
   <a v-if="href" :href="href" :class="className">
-    {{ label }}
+    <slot></slot>
   </a>
   <button v-else :class="className">
-    {{ label }}
+    <slot></slot>
   </button>
 </template>
 
